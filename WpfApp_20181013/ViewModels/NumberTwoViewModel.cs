@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 using WpfApp_20181013.Messages;
 
 namespace WpfApp_20181013.ViewModels
-{    
-    public class NumberOneViewModel : BaseViewModel, IHandle<MessageForNumberOne>
+{
+    public class NumberTwoViewModel : BaseViewModel, IHandle<MessageForNumberTwo>
     {
-
         private EventAggregator _ea;
 
-        public NumberOneViewModel(EventAggregator _ea)
+        public NumberTwoViewModel(EventAggregator _ea)
         {
             _ea.Subscribe(this);
-             
         }
         
-        public void Handle(MessageForNumberOne message)
+        public void Handle(MessageForNumberTwo message)
         {
             AddMessage(message.Message);
         }

@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace WpfApp_20181013.ViewModels
 {
-    public class BaseViewModel : PropertyChangedBase
+    public abstract class BaseViewModel : PropertyChangedBase
     {
         private ObservableCollection<String> _messagesRecieved;
-
+        
         public ObservableCollection<String> MessagesRecieved
         {
             get
@@ -20,7 +20,7 @@ namespace WpfApp_20181013.ViewModels
                 {
                     _messagesRecieved = new ObservableCollection<string>();
                 }
-                return _messagesRecieved;
+                return _messagesRecieved;                
             }
             
         }

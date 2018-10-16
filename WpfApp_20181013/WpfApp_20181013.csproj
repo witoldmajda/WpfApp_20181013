@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
@@ -79,11 +80,16 @@
     </Compile>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Messages\MessageForNumberOne.cs" />
+    <Compile Include="Messages\MessageForNumberTwo.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\NumberOneViewModel.cs" />
+    <Compile Include="ViewModels\NumberTwoViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\NumberOneView.xaml.cs">
       <DependentUpon>NumberOneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NumberTwoView.xaml.cs">
+      <DependentUpon>NumberTwoView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
@@ -121,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\NumberOneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NumberTwoView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

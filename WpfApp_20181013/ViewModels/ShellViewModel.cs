@@ -10,7 +10,19 @@ namespace WpfApp_20181013.ViewModels
 {
     public class ShellViewModel : PropertyChangedBase
     {
+        private EventAggregator _ea;
+
+        public ShellViewModel()
+        {
+            _ea = IoC.Get<EventAggregator>();
+            _numberOne = new NumberOneViewModel(_ea);
+            _numberTwo = new NumberTwoViewModel(_ea);
+        }
+
+
         private NumberOneViewModel _numberOne;
+
+        private NumberTwoViewModel _numberTwo;
 
         public NumberOneViewModel NumberOne
         {
@@ -18,12 +30,15 @@ namespace WpfApp_20181013.ViewModels
             set { _numberOne = value; }
         }
 
-        private string _currentMessage;
 
-        public ShellViewModel()
+        public NumberTwoViewModel NumberTwo
         {
-            _numberOne = new NumberOneViewModel();
+            get { return _numberTwo; }
+            set { _numberTwo = value; }
         }
+
+        private string _currentMessage;
+       
 
         public string CurrentMessage
         {
@@ -36,6 +51,7 @@ namespace WpfApp_20181013.ViewModels
                 _currentMessage = value;
                 NotifyOfPropertyChange(() => CurrentMessage);
                 NotifyOfPropertyChange(() => CanMessageNumberOne);
+                NotifyOfPropertyChange(() => CanMessageNumberTwo);
             }
         }
 
@@ -53,9 +69,23 @@ namespace WpfApp_20181013.ViewModels
         }
 
         public void MessageNumberOne()
-        {
-            IoC.Get<IEventAggregator>().PublishOnUIThread(new MessageForNumberOne(CurrentMessage));
+        {            
+            _ea.PublishOnUIThread(new MessageForNumberOne(CurrentMessage));            
             CurrentMessage = string.Empty;
+        }
+
+        public void MessageNumberTwo()
+        {            
+            _ea.PublishOnUIThread(new MessageForNumberTwo(CurrentMessage));            
+            CurrentMessage = string.Empty;
+        }
+
+        public bool CanMessageNumberTwo
+        {
+            get
+            {
+                return canSendMessage();
+            }
         }
     }
 }
