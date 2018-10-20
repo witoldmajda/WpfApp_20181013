@@ -9,7 +9,7 @@ namespace WpfApp_20181013.interfaces
 {
     public interface IMessagesService
     {
-        ObservableCollection<object> Get();
+        ObservableCollection<String> Get();
 
     }
 }
