@@ -79,8 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="interfaces\IMessagesService.cs" />
     <Compile Include="Messages\MessageForNumberOne.cs" />
     <Compile Include="Messages\MessageForNumberTwo.cs" />
+    <Compile Include="services\MocMessagesService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\NumberOneViewModel.cs" />
     <Compile Include="ViewModels\NumberTwoViewModel.cs" />
