@@ -82,6 +82,8 @@
     <Compile Include="interfaces\IMessagesService.cs" />
     <Compile Include="Messages\MessageForNumberOne.cs" />
     <Compile Include="Messages\MessageForNumberTwo.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\MessageModel.cs" />
     <Compile Include="services\MocMessagesService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\NumberOneViewModel.cs" />
@@ -124,9 +126,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Page Include="Views\NumberOneView.xaml">
       <SubType>Designer</SubType>
