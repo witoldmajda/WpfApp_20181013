@@ -12,17 +12,7 @@ namespace WpfApp_20181013.services
     {
         private ObservableCollection<String> messages;
 
-        public MocMessagesService()
-        {
-            messages = new List<String>
-            {
-                new String{Message = "1"};
-            };
-        }
-
-        public ObservableCollection<object> Get()
-        {
-            throw new NotImplementedException();
-        }
+        
+       
     }
 }
